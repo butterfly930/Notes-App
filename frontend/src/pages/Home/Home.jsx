@@ -1,17 +1,29 @@
 import React from 'react';
-import ProfileInfo from '../../components/Cards/ProfileInfo';
-import { Link } from 'react-router-dom';
+import NavBar from '../../components/Navbar/Navbar';
+import NoteCard from '../../components/Cards/NoteCard';
+import Navbar from '../../components/Navbar/Navbar';
+
 
 
 const Home = () => {
   return (
-    <div className='bg-white flex items-center justify-between px-6 py-2 drop-shadow-sm'>
-      <h2 className='text-xl font-medium text-black py-2'>Notes</h2>
+    <>
+    <Navbar />
 
-      <ProfileInfo />
-      </div>
-    
+    <div className="container mx-auto">
+      <NoteCard 
+      title="Meeting on 7th April" 
+      date="3rd Apr 2024" 
+      content="Meeting on 7th April" 
+      tags="#Meeting"
+      isPinned={true}
+      onEdit={()=>{}}
+      onDelete={()=>{}}
+      onPinNote={()=>{}}
+      />
+    </div>
+    </>
   )
 }
 
-export default Home
+export default Home;
