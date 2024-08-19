@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import { MdAdd, MdClose } from 'react-icons/md';
 
 const TagInput = ({ tags, setTags }) => {
-
-    const [inputValue, setInputvalue] = useState("");
+    const [inputValue, setInputValue] = useState("");
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };
 
     const addNewTag = () => {
-        if(inputValue.trim() !==) {
+        if(inputValue.trim() !== "") {
             setTags([...tags, inputValue.trim()]);
-
             setInputValue("");
         }
     };
@@ -49,10 +47,11 @@ const TagInput = ({ tags, setTags }) => {
         <div className='flex items-center gap-4 mt-3'>
             <input 
             type="text" 
+            value={inputValue}
             className='text-sm bg-transparent border px-3 py-2 rounded outline-none' 
             placeholder='Add tags'
             onChange={handleInputChange}
-            onKeyDown={handleKewDown}
+            onKeyDown={handleKeyDown}
             />
 
             <button 
